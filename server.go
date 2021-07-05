@@ -24,8 +24,9 @@ func NewServer(bindAddr string, preMasterSecretLogPath string, handler http.Hand
 
 	h2Server := &http2.Server{
 		// TODO: extends the idle time after re-use openapi client
-		IdleTimeout: 1 * time.Millisecond,
+		IdleTimeout: 10 * time.Second,
 	}
+	fmt.Infof("H2Server IdleTimeout: %x", h2Server.IdleTimeout)
 	server = &http.Server{
 		Addr:    bindAddr,
 		Handler: h2c.NewHandler(handler, h2Server),
