@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/free5gc/http2_util/version"
+	"github.com/endrigoshi/http2_util/version"
 )
 
 func TestVersion(t *testing.T) {
